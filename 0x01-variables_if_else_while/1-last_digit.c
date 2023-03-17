@@ -1,23 +1,23 @@
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-int main() {
-	srand(time(NULL)); // seed the random number generator with the current time
+int main(void)
+{
+	srand(time(NULL));
 
-	int n = rand(); // assign a random number to the variable n
+	int n = rand();
+	int last_digit = n % 10;
 
-	int last_digit = n % 10; // get the last digit of n
-
-	std::cout << "Last digit of " << n << " is ";
+	printf("Last digit of %d is %d and is", n, last_digit);
 
 	if (last_digit > 5) {
-		std::cout << last_digit << " and is greater than 5" << std::endl;
+		printf(" greater than 5\n");
 	} else if (last_digit == 0) {
-		std::cout << last_digit << " and is 0" << std::endl;
+		printf(" 0\n");
 	} else {
-		std::cout << last_digit << " and is less than 6 and not 0" << std::endl;
+		printf(" less than 6 and not 0\n");
 	}
 
-	return 0;
+	return (0);
 }
