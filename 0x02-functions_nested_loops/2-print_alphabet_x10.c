@@ -1,4 +1,4 @@
-#include <unistd.h> /* Include the necessary header file */
+#include <stdio.h> /* Include the necessary header file */
 
 void print_alphabet_x10(void); /* Declare the function before main */
 
@@ -13,9 +13,9 @@ void print_alphabet_x10(void) {
     for (i = 0; i < 10; i++) {
         letter = 'a';
         while (letter <= 'z') {
-            _putchar(letter);
+            putchar(letter);
             letter++;
         }
-        _putchar('\n');
+        putchar('\n');
     }
 }
