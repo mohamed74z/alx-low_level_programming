@@ -1,21 +1,20 @@
 #include <stdio.h>
+#include <ctype.h>
 
 int _islower(int c);
 
 int main() {
-    char c = 'a';
-    if (_islower(c)) {
-        printf("%c is lowercase.\n", c);
-    } else {
-        printf("%c is not lowercase.\n", c);
-    }
+    int n, r;
 
-    c = 'A';
-    if (_islower(c)) {
-        printf("%c is lowercase.\n", c);
-    } else {
-        printf("%c is not lowercase.\n", c);
-    }
+    printf("Enter a lowercase letter: ");
+    n = getchar();
+
+    r = _islower(n);
+    printf("%d\n", r);
 
     return 0;
+}
+
+int _islower(int c) {
+    return islower(c);
 }
