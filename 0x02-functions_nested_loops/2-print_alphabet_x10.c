@@ -1,6 +1,6 @@
-#include <unistd.h> // Include the necessary header file
+#include <unistd.h> /* Include the necessary header file */
 
-void print_alphabet_x10(void); // Declare the function before main
+void print_alphabet_x10(void); /* Declare the function before main */
 
 int main(void) {
     print_alphabet_x10();
