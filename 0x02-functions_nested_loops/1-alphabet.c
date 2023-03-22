@@ -1,3 +1,4 @@
+/* This program prints the lowercase alphabets from a to z */
 #include <stdio.h>
 
 /**
