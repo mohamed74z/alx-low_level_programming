@@ -1,3 +1,6 @@
+/* This program prints the lowercase alphabets from a to z */
+#include <stdio.h>
+
 /* Prints the lowercase alphabets from a to z */
 void print_alphabet(void)
 {
@@ -9,4 +12,13 @@ void print_alphabet(void)
 	}
 
 	putchar('\n');
+}
+
+/* Main function */
+int main(void)
+{
+	/* Call print_alphabet */
+	print_alphabet();
+
+	return 0;
 }
