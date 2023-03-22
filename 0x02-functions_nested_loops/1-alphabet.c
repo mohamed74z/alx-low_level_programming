@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /**
- * This function prints the alphabets in order 
- */
+* This function prints the alphabets in order 
+*/
 
 void print_alphabet(void)
 {
