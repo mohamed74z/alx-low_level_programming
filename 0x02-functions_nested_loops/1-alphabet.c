@@ -1,10 +1,7 @@
 /* This program prints the lowercase alphabets from a to z */
 #include <stdio.h>
 
-/**
-* This function prints the alphabets in order
-*/
-
+/* This function prints the lowercase alphabets from a to z */
 void print_alphabet(void)
 {
 	char c = 'a';
