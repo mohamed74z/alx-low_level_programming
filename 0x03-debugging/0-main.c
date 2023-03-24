@@ -8,5 +8,5 @@ int main(void)
     printf("Testing zero...\n");
     positive_or_negative(zero);
 
-    return 0;
+    return (0);
 }
