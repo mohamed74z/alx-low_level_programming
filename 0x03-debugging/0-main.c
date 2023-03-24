@@ -1,15 +1,12 @@
+#include <stdio.h>
 #include "main.h"
 
-/**
- * main - tests function that prints if integer is positive, negative, or zero
- * Return: 0
- */
 int main(void)
 {
-	int i;
+    int zero = 0;
 
-	i = 0;
-	positive_or_negative(i);
+    printf("Testing zero...\n");
+    positive_or_negative(zero);
 
-	return (0);
+    return 0;
 }
