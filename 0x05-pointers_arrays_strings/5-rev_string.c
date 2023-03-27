@@ -10,12 +10,14 @@ void rev_string(char *s)
 	char temp;
 
 	/* Find the length of the input string */
-	while (s[len] != '\0') {
+	while (s[len] != '\0')
+	{
 		len++;
 	}
 
 	/* Swap characters from the beginning and end of the string */
-	for (i = 0; i < len / 2; i++) {
+	for (i = 0; i < len / 2; i++)
+	{
 		temp = s[i];
 		s[i] = s[len - i - 1];
 		s[len - i - 1] = temp;
