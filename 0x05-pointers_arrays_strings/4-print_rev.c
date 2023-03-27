@@ -7,16 +7,19 @@
  * Return: void
  */
 void print_rev(char *s) {
+	int len = 0, i;
+
 	// Find the length of the input string
-	int len = 0;
 	while (s[len] != '\0') {
 		len++;
 	}
+
 	// Print the characters of the string in reverse order
-	for (int i = len-1; i >= 0; i--) {
+	for (i = len - 1; i >= 0; i--) {
 		// Write each character to the console using putchar
 		putchar(s[i]);
 	}
+
 	// Add a new line character to the end of the output
 	putchar('\n');
 }
