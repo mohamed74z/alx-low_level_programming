@@ -1,10 +1,8 @@
 #include <stdio.h>
 
 /**
- * _puts - prints a string followed by a new line to stdout
- * @str: pointer to the string to be printed
- *
- * Return: void
+ * print_rev - Prints a string in reverse, followed by a new line.
+ * @s: The string to be printed in reverse.
  */
 void print_rev(char *s)
 {
