@@ -6,7 +6,8 @@
  *
  * Return: void
  */
-void print_rev(char *s) {
+void print_rev(char *s)
+{
 	int len = 0, i;
 
 	/* Find the length of the input string */
