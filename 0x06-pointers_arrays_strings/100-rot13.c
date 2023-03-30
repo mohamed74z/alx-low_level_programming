@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * rot13 - Encodes a string using ROT13 algorithm.
+ * rot13 - Encodes a string using rot13.
  * @s: The string to encode.
  *
  * Return: A pointer to the encoded string.
@@ -9,19 +9,24 @@
 char *rot13(char *s)
 {
     int i, j;
-    char *alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-    char *rot13 = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+    char c;
 
     for (i = 0; s[i]; i++)
     {
-        for (j = 0; alpha[j]; j++)
+        if ((s[i] >= 'a' && s[i] <= 'm') || (s[i] >= 'A' && s[i] <= 'M'))
         {
-            if (s[i] == alpha[j])
-            {
-                s[i] = rot13[j];
-                break;
-            }
+            c = s[i] + 13;
         }
+        else if ((s[i] >= 'n' && s[i] <= 'z') || (s[i] >= 'N' && s[i] <= 'Z'))
+        {
+            c = s[i] - 13;
+        }
+        else
+        {
+            c = s[i];
+        }
+
+        s[i] = c;
     }
 
     return s;
