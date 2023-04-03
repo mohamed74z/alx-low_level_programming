@@ -1,23 +1,16 @@
-#include <unistd.h>
-
-char *_strchr(char *s, char c);
-
-int main(void)
+char *_strchr(char *s, char c)
 {
-    char s[] = "Hello, world!";
-    char *result = _strchr(s, 'w');
-    if (result == NULL)
+    while (*s != '\0')
     {
-        write(STDOUT_FILENO, "Not found\n", 10);
+        if (*s == c)
+        {
+            return s;
+        }
+        s++;
     }
-    else
+    if (c == '\0')
     {
-        char pos_str[3];
-        int pos = result - s;
-        pos_str[0] = '0' + pos / 10;
-        pos_str[1] = '0' + pos % 10;
-        pos_str[2] = '\n';
-        write(STDOUT_FILENO, pos_str, 3);
+        return s;
     }
-    return (0);
+    return NULL;
 }
