@@ -1,16 +1,38 @@
-char *_strchr(char *s, char c)
+#include <stdlib.h>
+
+char *_strchr(char *s, char c);
+
+int _putchar(char c)
 {
-    while (*s != '\0')
+    return write(1, &c, 1);
+}
+
+void _puts(char *str)
+{
+    int i = 0;
+
+    while (str[i] != '\0')
     {
-        if (*s == c)
-        {
-            return s;
-        }
-        s++;
+        _putchar(str[i]);
+        i++;
     }
-    if (c == '\0')
+}
+
+int main(void)
+{
+    char s[] = "Hello, world!";
+    char *result = _strchr(s, 'w');
+    if (result == NULL)
     {
-        return s;
+        _puts("Character not found.\n");
     }
-    return NULL;
+    else
+    {
+        _puts("Character found at position ");
+        char pos = result - s + '0';
+        _putchar(pos);
+        _putchar('.');
+        _putchar('\n');
+    }
+    return (0);
 }
