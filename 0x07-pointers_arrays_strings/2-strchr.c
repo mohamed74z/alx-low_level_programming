@@ -4,28 +4,20 @@ char *_strchr(char *s, char c);
 
 int main(void)
 {
-	char s[] = "Hello, world!";
-	char *result = _strchr(s, 'w');
-	if (result == NULL)
-	{
-		write(STDOUT_FILENO, "Character not found.\n", 21);
-	}
-	else
-	{
-		char pos_str[10];
-		int pos = result - s;
-		int i = 0;
-		while (pos > 0)
-		{
-			pos_str[i++] = '0' + (pos % 10);
-			pos /= 10;
-		}
-		write(STDOUT_FILENO, "Character found at position ", 28);
-		while (i > 0)
-		{
-			write(STDOUT_FILENO, &pos_str[--i], 1);
-		}
-		write(STDOUT_FILENO, ".\n", 2);
-	}
-	return (0);
+    char s[] = "Hello, world!";
+    char *result = _strchr(s, 'w');
+    if (result == NULL)
+    {
+        write(STDOUT_FILENO, "Not found\n", 10);
+    }
+    else
+    {
+        char pos_str[3];
+        int pos = result - s;
+        pos_str[0] = '0' + pos / 10;
+        pos_str[1] = '0' + pos % 10;
+        pos_str[2] = '\n';
+        write(STDOUT_FILENO, pos_str, 3);
+    }
+    return (0);
 }
