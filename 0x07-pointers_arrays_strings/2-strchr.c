@@ -1,24 +1,31 @@
-/**
- * _strchr - Locates a character in a string.
- * @s: The string to search.
- * @c: The character to locate.
- *
- * Return: Pointer to the first occurrence of the character c in the string s,
- *         or NULL if the character is not found.
- */
-char *_strchr(char *s, char c)
+#include <unistd.h>
+
+char *_strchr(char *s, char c);
+
+int main(void)
 {
-	while (*s != '\0')
+	char s[] = "Hello, world!";
+	char *result = _strchr(s, 'w');
+	if (result == NULL)
 	{
-		if (*s == c)
+		write(STDOUT_FILENO, "Character not found.\n", 21);
+	}
+	else
+	{
+		char pos_str[10];
+		int pos = result - s;
+		int i = 0;
+		while (pos > 0)
 		{
-			return (s);
+			pos_str[i++] = '0' + (pos % 10);
+			pos /= 10;
 		}
-		s++;
+		write(STDOUT_FILENO, "Character found at position ", 28);
+		while (i > 0)
+		{
+			write(STDOUT_FILENO, &pos_str[--i], 1);
+		}
+		write(STDOUT_FILENO, ".\n", 2);
 	}
-	if (*s == c)
-	{
-		return (s);
-	}
-	return (NULL);
+	return (0);
 }
