@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include <stdio.h>
 
 /**
  * print_chessboard - Prints the chessboard
