@@ -1,25 +1,19 @@
 #include "main.h"
 
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
+ * print_chessboard - prints the chessboard
+ * @a: the chessboard to print
  */
-int main(void)
+void print_chessboard(char (*a)[8])
 {
-    char chessboard[8][8] = {
-        {'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B'},
-        {'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W'},
-        {'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B'},
-        {'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W'},
-        {'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B'},
-        {'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W'},
-        {'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B'},
-        {'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W'}
-    };
+    int row, col;
 
-    print_chessboard(chessboard);
-
-    return (0);
+    for (row = 0; row < 8; row++)
+    {
+        for (col = 0; col < 8; col++)
+        {
+            _putchar(a[row][col]);
+        }
+        _putchar('\n');
+    }
 }
-
