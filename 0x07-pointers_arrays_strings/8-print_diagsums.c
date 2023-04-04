@@ -38,3 +38,4 @@ void print_diagsums(int *a, int size)
     _putchar(sum2 % 10 + '0');
     _putchar('\n');
 }
+
