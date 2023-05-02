@@ -9,15 +9,19 @@
  * Return: Always 0.
  */
 
-int pop_listint(listint_t **head) {
-  if (*head == NULL) {
-    return 0;
-  }
+int pop_listint(listint_t **head)
+{
+	listint_t *tmp;
+	int ret;
 
-  listint_t *temp = *head;
-  int n = temp->n;
-  *head = temp->next;
-  free(temp);
+	if (*head == NULL)
+		return (0);
 
-  return n;
+	tmp = *head;
+	ret = (*head)->n;
+	*head = (*head)->next;
+
+	free(tmp);
+
+	return (ret);
 }
