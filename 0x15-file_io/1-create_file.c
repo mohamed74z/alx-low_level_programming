@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -9,31 +7,22 @@
  */
 
 int create_file(const char *filename, char *text_content)
-	{
-	// Check if the filename is NULL.
-	if (filename == NULL)
-	{
-		return -1;
-	}
+{
+	int file, i = 0;
 
-	// Check if the text_content is NULL.
+	if (!filename)
+		return (-1);
+	file = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+	if (file == -1)
+		return (-1);
 	if (text_content == NULL)
-	{
 		text_content = "";
-	}
-
-	// Open the file for writing.
-	FILE *fp = fopen(filename, "w");
-	if (fp == NULL)
-	{
-		return -1;
-	}
-
-	// Write the text content to the file.
-	fputs(text_content, fp);
-
-	// Close the file.
-	fclose(fp);
+	while (text_content[i])
+		i++;
+	write(file, text_content, i);
+	close(file);
+	return (1);
+}
 
 	// Return success.
 	return 1;
