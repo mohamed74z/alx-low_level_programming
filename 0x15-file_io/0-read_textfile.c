@@ -7,33 +7,25 @@
  */
 
 ssize_t read_textfile(const char *filename, size_t letters)
-	{
-	// Check if the filename is NULL.
-	if (filename == NULL)
-	{
-		return 0;
-	}
-	
-	// Open the file for reading.
-	FILE *fp = fopen(filename, "r");
-	if (fp == NULL)
-	{
-		return 0;
-	}
+{
+	int file, letters2 = 0;
+	char *buff;
 
-	// Read the file one letter at a time.
-	char ch;
-	size_t i = 0;
-	while (i < letters && (ch = fgetc(fp)) != EOF)
-	{
-		// Write the letter to standard output.
-		fputc(ch, stdout);
-		i++;
-	}
+	if (!filename)
+		return (0);
 
-	// Close the file.
-	fclose(fp);
+	buff = malloc((letters + 1) * sizeof(char));
+	if (buff == NULL)
+		return (0);
 
-	// Return the number of letters that were read and printed.
-	return i;
+	buff[letters] = '\0';
+	file = open(filename, O_RDONLY);
+	if (file == -1)
+		return (0);
+
+	letters2 =  read(file, buff, letters);
+	write(STDOUT_FILENO, buff, letters2);
+	close(file);
+	free(buff);
+	return (letters2);
 }
